@@ -22,7 +22,7 @@ class Escena1 extends Phaser.Scene {
 
     create() {
 
-        this.gameMusic = this.sound.add('gameMusic');
+        this.gameMusic = this.sound.add('gameMusic', {volume: 0.05});
         this.gameMusic.play();
 
         this.add.image(400, 300, 'sky');
@@ -87,6 +87,8 @@ class Escena1 extends Phaser.Scene {
         this.bombs = this.physics.add.group();
         this.physics.add.collider(this.bombs, this.platforms);
         this.physics.add.collider(this.player, this.bombs, this.hitBomb, null, this);
+
+        this.textTime = this.add.text(40, 40, 'Las estrellas te dan fuerza, recógelas!', { fontSize: '32px', fill: '#FFF' });
 
     }
 

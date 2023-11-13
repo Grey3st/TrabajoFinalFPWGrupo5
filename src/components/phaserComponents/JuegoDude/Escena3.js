@@ -29,9 +29,9 @@ class Escena3 extends Phaser.Scene{
 
     create(){
         
-        this.level3 = this.sound.add('level3');
+        this.level3 = this.sound.add('level3', {volume: 0.05});
         this.level3.play();
-        this.musicaLost = this.sound.add('lost');
+        this.musicaLost = this.sound.add('lost', {volume: 0.05});
         
         this.add.image(400, 300, 'sky3');
         this.platforms = this.physics.add.staticGroup();
@@ -45,7 +45,7 @@ class Escena3 extends Phaser.Scene{
         //this.add.image(400, 300, 'star');    crea una estrella estatica en el escenario 
         this.player = this.physics.add.sprite(100, 100, 'dude');
         //-------------------------//
-        this.player.setBounce(0.2);
+        this.player.setBounce(0);
         this.player.setCollideWorldBounds(true);
         //----/
         this.anims.create({
@@ -73,7 +73,7 @@ class Escena3 extends Phaser.Scene{
         // Se agregan las estrellas
         this.stars = this.physics.add.group({
             key: 'star',
-            repeat: 5, // Cantidad de estrellas
+            repeat: 4, // Cantidad de estrellas
             setXY: { x: 0, y: 0, stepX:Phaser.Math.RND.between(70,150) } // Inicialmente, las posiciones X e Y no importan
         });
 
@@ -86,7 +86,7 @@ class Escena3 extends Phaser.Scene{
 
         //Se agrega el rebote entre el grupo de estrelas
         this.stars.children.iterate(function (child) {
-            child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+            child.setBounceY(Phaser.Math.FloatBetween(0.2, 0.4));
         });
 
         //Habilita las colisiones de las entrellas con la plataforma
@@ -102,8 +102,11 @@ class Escena3 extends Phaser.Scene{
         this.bombs = this.physics.add.group();
         this.physics.add.collider(this.bombs, this.platforms);
         this.physics.add.collider(this.player, this.bombs, this.hitBomb, null, this);
+
         this.textTime = this.add.text(40, 40, 'Te estás ahogando!', { fontSize: '32px', fill: '#FFF' });
-        this.textTime = this.add.text(90, 80, 'Consigue 500 puntos en 15 segundos!', { fontSize: '22px', fill: '#FFF' });
+        this.textTime = this.add.text(50, 80, 'Consigue 500 puntos en 15 segundos para salir del agua!', { fontSize: '22px', fill: '#FFF' });
+
+
         setTimeout(() => {
             this.level3.destroy();
             this.musicaLost.play();
@@ -129,9 +132,9 @@ class Escena3 extends Phaser.Scene{
 
 
         if (this.score==500){
-            this.gameMusic.destroy();
+            this.level3.destroy();
             this.scene.start('Felicitaciones'); 
-            this.gameMusic.destroy();
+            this.level3.destroy();
             this.musicaLost.play();
         }
         this.plataforma1.x-=2;
