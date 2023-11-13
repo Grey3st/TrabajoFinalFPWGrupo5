@@ -28,9 +28,9 @@ class Escena2 extends Phaser.Scene{
 
     create(){
         
-        this.gameMusic = this.sound.add('gameMusic');
+        this.gameMusic = this.sound.add('gameMusic', {volume: 0.05});
         this.gameMusic.play();
-        this.musicaLost = this.sound.add('lost');
+        this.musicaLost = this.sound.add('lost', {volume: 0.05});
         
         this.add.image(400, 300, 'sky');
         this.platforms = this.physics.add.staticGroup();
@@ -97,13 +97,14 @@ class Escena2 extends Phaser.Scene{
         this.physics.add.overlap(this.player, this.stars, this.collectStar, null, this);
 
         //Para controlar el puntaje
-        this.scoreText = this.add.text(16, 16, 'score: '+ this.score, { fontSize: '32px', fill: '#000' });
+        this.scoreText = this.add.text(16, 16, 'Score: '+ this.score, { fontSize: '32px', fill: '#000' });
 
         //Para agregar las bombas
         this.bombs = this.physics.add.group();
         this.physics.add.collider(this.bombs, this.platforms);
         this.physics.add.collider(this.player, this.bombs, this.hitBomb, null, this);
         
+        this.textTime = this.add.text(40, 40, 'La maréa está subiendo...', { fontSize: '32px', fill: '#FFF' });
         
     }
     update(){
@@ -125,7 +126,6 @@ class Escena2 extends Phaser.Scene{
         if (this.score==400){
             this.gameMusic.destroy();
             this.scene.start('Escena3',{score:this.score}); 
-           // this.scene.start('Felicitaciones'); 
             this.gameMusic.destroy();
         }
         this.plataforma1.x-=2;
