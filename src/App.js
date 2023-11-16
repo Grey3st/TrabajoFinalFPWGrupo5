@@ -15,11 +15,11 @@ function App(){
 <Router>
 <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/">Trabajo Final</Navbar.Brand>
+        <Navbar.Brand href="/">Grupo 5</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/">Inicio</Nav.Link>
             <NavDropdown title="Lista de Proyectos" id="collapsible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Comparador de Precios</NavDropdown.Item>
               <NavDropdown.Item href="JuegoDude">Juego DUDE</NavDropdown.Item>
