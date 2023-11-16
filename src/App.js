@@ -4,6 +4,8 @@ import About from './components/About';
 import ErrorPage from './components/ErrorPage';
 import JuegoDude from './components/JuegoDude';
 import InicioJuego from './components/phaserComponents/JuegoDude/InicioJuego';
+import ListaTareas from './components/ListaTareas';
+
 
 import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
 
@@ -22,7 +24,7 @@ function App(){
               <NavDropdown.Item href="#action/3.1">Comparador de Precios</NavDropdown.Item>
               <NavDropdown.Item href="JuegoDude">Juego DUDE</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.1">Juego de Naves</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.1">Lista de Tareas</NavDropdown.Item>
+              <NavDropdown.Item href="ListaTareas">Lista de Tareas</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Juego de Imágenes de Animales</NavDropdown.Item>
             </NavDropdown>
           </Nav>
@@ -39,6 +41,7 @@ function App(){
         <Route path="aboutUs" element={<About />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path="JuegoDude" element={<JuegoDude />} />
+        <Route path="ListaTareas" element={<ListaTareas />} />
     </Routes>
 </Router>
     )
