@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Container } from 'react-bootstrap';
+
 
 const ComparadorPrecios = () => {
   const [productosAcumulados, setProductosAcumulados] = useState({
@@ -31,9 +33,17 @@ const ComparadorPrecios = () => {
     if (productosAcumulados.listaProductos.length === 0) {
       alert('NO HAY PRODUCTOS CARGADOS');
     } else {
-     
-
+      pBaratos.innerHTML = '';
       console.log(productosAcumulados.listaProductos);
+
+      const listaProductos = document.getElementById('listaProductos');
+      listaProductos.innerHTML = '';
+      productosAcumulados.listaProductos.forEach((producto) => {
+        const listItem = document.createElement('ul');
+        listItem.textContent = `Nombre: ${producto.nombre}, Precio: ${producto.precio}, Comercio: ${producto.comercio}`;
+        listaProductos.appendChild(listItem);
+    });
+    
     }
   };
 
@@ -75,8 +85,9 @@ const ComparadorPrecios = () => {
   };
 
   return (
+    <Container style={{ backgroundImage: `url(/img/ComparadorPrecios/fondoanime.png)` }}>
     <form className="form-signin">
-      <img className="mb-4" src="../public/img/productos.jpg" alt="" width="300" height="200" />
+      <img className="mb-4" src="/img/ComparadorPrecios/productos.jpg" alt="" width="400" height="200"/>
       <h1 className="h3 mb-3 font-weight-normal">Comparador de Precios</h1>
       <div className="row">
         <div className="col">
@@ -139,6 +150,7 @@ const ComparadorPrecios = () => {
         </div>
       </div>
     </form>
+    </Container>
   );
 };
 

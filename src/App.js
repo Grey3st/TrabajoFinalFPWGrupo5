@@ -7,7 +7,7 @@ import JuegoNave from './components/JuegoNave';
 import InicioJuego from './components/phaserComponents/JuegoDude/InicioJuego';
 import InicioJuegoNave from './components/phaserComponents/JuegoNave/InicioJuegoNave';
 import ListaTareas from './components/ListaTareas';
-import ComparadorDePreciosForm from './components/ComparadorPrecios';
+import ComparadorPrecios from './components/ComparadorPrecios';
 
 import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
 
@@ -23,12 +23,11 @@ function App(){
           <Nav className="me-auto">
             <Nav.Link href="/">Inicio</Nav.Link>
             <NavDropdown title="Lista de Proyectos" id="collapsible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Comparador de Precios</NavDropdown.Item>
+              <NavDropdown.Item href="ComparadorPrecios">Comparador de Precios</NavDropdown.Item>
               <NavDropdown.Item href="JuegoDude">Juego DUDE</NavDropdown.Item>
               <NavDropdown.Item href="JuegoNave">Juego de Naves</NavDropdown.Item>
               <NavDropdown.Item href="ListaTareas">Lista de Tareas</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Juego de Imágenes de Animales</NavDropdown.Item>
-              <NavDropdown.Item href="ComparadorDePreciosForm">ComparadorPrecios</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
@@ -46,7 +45,7 @@ function App(){
         <Route path="JuegoDude" element={<JuegoDude />} />
         <Route path="ListaTareas" element={<ListaTareas />} />
         <Route path="JuegoNave" element={<JuegoNave />} />
-        <Route path="ComparadorDePreciosForm" element={<ComparadorDePreciosForm />} />
+        <Route path="ComparadorPrecios" element={<ComparadorPrecios />} />
 
     </Routes>
 </Router>
