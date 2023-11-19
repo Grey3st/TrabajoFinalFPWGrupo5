@@ -3,7 +3,7 @@ import Escena1 from "./phaserComponents/JuegoDude/Escena1.js"; // importar cada 
 import Escena2 from "./phaserComponents/JuegoDude/Escena2.js";
 import Escena3 from "./phaserComponents/JuegoDude/Escena3.js";
 import FinDelJuego from "./phaserComponents/JuegoDude/FinDelJuego.js"; // escena fin del juego al tocar bomba 
-import InicioJuego from "./phaserComponents/JuegoDude/InicioJuego.js";
+import InicioJuegoNave from "./phaserComponents/JuegoDude/InicioJuego.js";
 import Felicitaciones from "./phaserComponents/JuegoDude/Felicitaciones.js";
 import { useEffect, useState } from "react";
 
@@ -24,7 +24,7 @@ function JuegoDude() {
                 }
             },
         
-            scene: [InicioJuego,Escena1,Escena2, Escena3,FinDelJuego,Felicitaciones]      // cargar las escenas que se mostraran en el juego 
+            scene: [InicioJuegoNave,Escena1,Escena2, Escena3,FinDelJuego,Felicitaciones]      // cargar las escenas que se mostraran en el juego 
         };
         
         let game = new Phaser.Game(config);

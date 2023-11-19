@@ -3,7 +3,9 @@ import Inicio from './components/Inicio';
 import About from './components/About';
 import ErrorPage from './components/ErrorPage';
 import JuegoDude from './components/JuegoDude';
+import JuegoNave from './components/JuegoNave';
 import InicioJuego from './components/phaserComponents/JuegoDude/InicioJuego';
+import InicioJuegoNave from './components/phaserComponents/JuegoNave/InicioJuegoNave';
 import ListaTareas from './components/ListaTareas';
 
 
@@ -23,7 +25,7 @@ function App(){
             <NavDropdown title="Lista de Proyectos" id="collapsible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Comparador de Precios</NavDropdown.Item>
               <NavDropdown.Item href="JuegoDude">Juego DUDE</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.1">Juego de Naves</NavDropdown.Item>
+              <NavDropdown.Item href="JuegoNave">Juego de Naves</NavDropdown.Item>
               <NavDropdown.Item href="ListaTareas">Lista de Tareas</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Juego de Imágenes de Animales</NavDropdown.Item>
             </NavDropdown>
@@ -42,6 +44,8 @@ function App(){
         <Route path="*" element={<ErrorPage />} />
         <Route path="JuegoDude" element={<JuegoDude />} />
         <Route path="ListaTareas" element={<ListaTareas />} />
+        <Route path="JuegoNave" element={<JuegoNave />} />
+
     </Routes>
 </Router>
     )
