@@ -17,7 +17,7 @@ class Escena1 extends Phaser.Scene {
         this.load.image('bomb', '/img/JuegoDude/bomb.png');
         this.load.spritesheet('dude', '/img/JuegoDude/dude.png', { frameWidth: 32, frameHeight: 48 });
 
-        this.load.audio('gameMusic', '/sound/JuegoDude/gamePlay.mp3');
+        this.load.audio('gameMusic', '../sound/JuegoDude/gamePlay.mp3');
     }
 
     create() {
