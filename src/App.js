@@ -8,6 +8,7 @@ import InicioJuego from './components/phaserComponents/JuegoDude/InicioJuego';
 import InicioJuegoNave from './components/phaserComponents/JuegoNave/InicioJuegoNave';
 import ListaTareas from './components/ListaTareas';
 import ComparadorPrecios from './components/ComparadorPrecios';
+import JuegoAnimales from './components/JuegoAnimales';
 
 import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
 
@@ -27,7 +28,7 @@ function App(){
               <NavDropdown.Item href="JuegoDude">Juego DUDE</NavDropdown.Item>
               <NavDropdown.Item href="JuegoNave">Juego de Naves</NavDropdown.Item>
               <NavDropdown.Item href="ListaTareas">Lista de Tareas</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Juego de Imágenes de Animales</NavDropdown.Item>
+              <NavDropdown.Item href="JuegoAnimales">Juego de Imágenes de Animales</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
@@ -46,6 +47,7 @@ function App(){
         <Route path="ListaTareas" element={<ListaTareas />} />
         <Route path="JuegoNave" element={<JuegoNave />} />
         <Route path="ComparadorPrecios" element={<ComparadorPrecios />} />
+        <Route path="JuegoAnimales" element={<JuegoAnimales />} />
 
     </Routes>
 </Router>

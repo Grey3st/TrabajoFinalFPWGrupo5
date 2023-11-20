@@ -1,0 +1,26 @@
+[
+    {
+        "imagen":"./img/JuegoAnimales/zebra.png",
+        "nombre":"Zebra"
+    },
+    {
+        "imagen":"./img/JuegoAnimales/cat.png",
+        "nombre":"Cat"
+    },
+    {
+        "imagen":"./img/JuegoAnimales/giraffe.png",
+        "nombre":"Giraffe"
+    },
+    {
+        "imagen":"./img/JuegoAnimales/leon.png",
+        "nombre":"Leon"
+    },
+    {
+        "imagen":"./img/JuegoAnimales/dog.png",
+        "nombre":"Dog"
+    },
+    {
+        "imagen":"./img/JuegoAnimales/cow.png",
+        "nombre":"Cow"
+    }
+]

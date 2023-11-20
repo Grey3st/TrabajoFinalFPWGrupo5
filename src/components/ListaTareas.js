@@ -9,7 +9,7 @@ const [notas, setNotas]=useState([]);
 
 /**/const [condicionNota, setCondicionNota]=useState(false);
 
-    /**/const [notaSeleccionada, setNotaSeleccionada] = useState(null);
+    const [notaSeleccionada, setNotaSeleccionada] = useState(null);
 
     const [condicionNotaResuelto, setCondicionNotaResuelto]=useState(false);
 
