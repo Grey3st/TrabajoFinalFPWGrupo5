@@ -42,8 +42,8 @@ const ComparadorPrecios = () => {
         const listItem = document.createElement('ul');
         listItem.textContent = `Nombre: ${producto.nombre}, Precio: ${producto.precio}, Comercio: ${producto.comercio}`;
         listaProductos.appendChild(listItem);
-    });
-    
+      });
+
     }
   };
 
@@ -85,71 +85,77 @@ const ComparadorPrecios = () => {
   };
 
   return (
-    <Container style={{ backgroundImage: `url(/img/ComparadorPrecios/fondoanime.png)` }}>
-    <form className="form-signin">
-      <img className="mb-4" src="/img/ComparadorPrecios/productos.jpg" alt="" width="400" height="200"/>
-      <h1 className="h3 mb-3 font-weight-normal">Comparador de Precios</h1>
-      <div className="row">
-        <div className="col">
-          <input
-            type="text"
-            id="nombreProducto"
-            className="form-control"
-            placeholder="Nombre del producto"
-            required
-            autoFocus
-            value={productosAcumulados.nombreProducto}
-            onChange={(e) => setProductosAcumulados({ ...productosAcumulados, nombreProducto: e.target.value })}
-          />
+    <Container style={{
+      backgroundImage: `url(/img/ComparadorPrecios/fondoanime.png)`,
+      textAlign: 'center',
+      backgroundSize: 'cover', // Puedes ajustar 'cover', 'contain', u otros valores según tus preferencias
+      backgroundPosition: 'center', // Puedes ajustar 'center', 'top', 'left', 'right', 'bottom', u otros valores según tus preferencias
+      backgroundRepeat: 'no-repeat' // Evita la repetición de la imagen de fondo
+    }}>
+      <form className="form-signin">
+        <img className="mb-4" src="/img/ComparadorPrecios/productos.jpg" alt="" width="400" height="200" style={{ margin: '10px' }} />
+        <h1 className="h3 mb-3 font-weight-normal">Comparador de Precios</h1>
+        <div className="row">
+          <div className="col">
+            <input
+              type="text"
+              id="nombreProducto"
+              className="form-control"
+              placeholder="Nombre del producto"
+              required
+              autoFocus
+              value={productosAcumulados.nombreProducto}
+              onChange={(e) => setProductosAcumulados({ ...productosAcumulados, nombreProducto: e.target.value })}
+            />
+          </div>
+          <div className="col">
+            <input
+              type="number"
+              id="precioProducto"
+              className="form-control"
+              placeholder="Precio del Producto"
+              required
+              autoFocus
+              value={productosAcumulados.precioProducto}
+              onChange={(e) => setProductosAcumulados({ ...productosAcumulados, precioProducto: e.target.value })}
+            />
+          </div>
+          <div className="col">
+            <select
+              className="form-select"
+              aria-label="Default select example"
+              id="nombreComercio"
+              value={productosAcumulados.nombreComercio}
+              onChange={(e) => setProductosAcumulados({ ...productosAcumulados, nombreComercio: e.target.value })}
+            >
+              <option value="SUPERMERCADO">---Elegir Supermercado---</option>
+              <option value="DIA">DIA</option>
+              <option value="COMODIN">COMODIN</option>
+              <option value="CARREFOUR">CARREFOUR</option>
+              <option value="CHANGOMAS">CHANGO MAS</option>
+            </select>
+          </div>
         </div>
-        <div className="col">
-          <input
-            type="number"
-            id="precioProducto"
-            className="form-control"
-            placeholder="Precio del Producto"
-            required
-            autoFocus
-            value={productosAcumulados.precioProducto}
-            onChange={(e) => setProductosAcumulados({ ...productosAcumulados, precioProducto: e.target.value })}
-          />
+        <br /><br />
+        <button id="guardarProducto" type="button" className="btn btn-success" onClick={GuardarProducto}>
+          Guardar Producto
+        </button>
+        <button id="listarProductos" type="button" className="btn btn-success" onClick={ListarProductos}>
+          Listar Productos
+        </button>
+        <button id="compararPrecios" type="button" className="btn btn-success" onClick={CompararPrecios}>
+          Comparar Precios
+        </button>
+        <br /><br />
+        <div className="row">
+          <div className="caja col listaProductos" id="listaProductos">
+
+          </div>
+          <div className="caja col pBaratos" id="pBaratos">
+
+          </div>
         </div>
-        <div className="col">
-          <select
-            className="form-select"
-            aria-label="Default select example"
-            id="nombreComercio"
-            value={productosAcumulados.nombreComercio}
-            onChange={(e) => setProductosAcumulados({ ...productosAcumulados, nombreComercio: e.target.value })}
-          >
-            <option value="SUPERMERCADO">---Elegir Supermercado---</option>
-            <option value="DIA">DIA</option>
-            <option value="COMODIN">COMODIN</option>
-            <option value="CARREFOUR">CARREFOUR</option>
-            <option value="CHANGOMAS">CHANGO MAS</option>
-          </select>
-        </div>
-      </div>
-      <br/><br/>
-      <button id="guardarProducto" type="button" className="btn btn-success" onClick={GuardarProducto}>
-        Guardar Producto
-      </button>
-      <button id="listarProductos" type="button" className="btn btn-success" onClick={ListarProductos}>
-        Listar Productos
-      </button>
-      <button id="compararPrecios" type="button" className="btn btn-success" onClick={CompararPrecios}>
-        Comparar Precios
-      </button>
-      <br/><br/>
-      <div className="row">
-        <div className="caja col listaProductos" id="listaProductos">
-          
-        </div>
-        <div className="caja col pBaratos" id="pBaratos">
-          
-        </div>
-      </div>
-    </form>
+      </form>
     </Container>
   );
 };

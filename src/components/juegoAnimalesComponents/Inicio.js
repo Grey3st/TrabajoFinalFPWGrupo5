@@ -44,8 +44,8 @@ function Inicio() {
 
     if (!mostrarJuego && !mostrarFelicitaciones) {
         return (
-            <div>
-                <h1>Write your name, player 1</h1>
+            <div style={{ textAlign: 'center', backgroundImage: `url(/img/JuegoAnimales/FondoAnimales.png)`, height: '100vh', backgroundSize: 'cover', paddingTop: '35vh' }}>
+                <h1>Write your name, Player 1</h1>
                 <input
                     type="text"
                     placeholder="Kid's name"
@@ -68,12 +68,12 @@ function Inicio() {
                 />
             </div>
         );
-    } 
-    
+    }
 
-    if (mostrarFelicitaciones===true && !mostrarJuego2 && !mostrarFelicitaciones2) {
+
+    if (mostrarFelicitaciones === true && !mostrarJuego2 && !mostrarFelicitaciones2) {
         return (
-            <div> 
+            <div style={{ textAlign: 'center', backgroundImage: `url(/img/JuegoAnimales/FondoAnimales.png)`, height: '100vh', backgroundSize: 'cover', paddingTop: '35vh' }}>
                 <h1>Write your name, player 2</h1>
                 <input
                     type="text"
@@ -98,8 +98,8 @@ function Inicio() {
             </div>
         );
     }
-    
-    else if (mostrarFelicitaciones===true && mostrarFelicitaciones2===true) {
+
+    else if (mostrarFelicitaciones === true && mostrarFelicitaciones2 === true) {
         return (
             <div>
                 <Felicitaciones nombreJugador={nombreJugador} puntaje={puntaje} nombreJugador2={nombreJugador2} puntaje2={puntaje2} />
