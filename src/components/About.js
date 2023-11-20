@@ -7,7 +7,6 @@ function About() {
   return (
     <Container>
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={data[0].foto} />
         <Card.Body>
           <Card.Title>{data[0].nombre}</Card.Title>
           <Card.Text>
@@ -18,7 +17,6 @@ function About() {
       </Card>
 
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={data[1].foto} />
         <Card.Body>
           <Card.Title>{data[1].nombre}</Card.Title>
           <Card.Text>
@@ -29,7 +27,6 @@ function About() {
       </Card>
 
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={data[2].foto} />
         <Card.Body>
           <Card.Title>{data[2].nombre}</Card.Title>
           <Card.Text>
@@ -40,7 +37,6 @@ function About() {
       </Card>
 
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={data[3].foto} />
         <Card.Body>
           <Card.Title>{data[3].nombre}</Card.Title>
           <Card.Text>
