@@ -25,7 +25,7 @@ function Juego2({ nombreJugador2, puntaje2, setPuntaje2, alTerminar2, rondaActua
         }
     };
 
-   
+
 
     const obtenerAnimalAleatorio2 = () => {
         const indiceAleatorio2 = Math.floor(Math.random() * dataAnimal2.length);
@@ -78,8 +78,8 @@ function Juego2({ nombreJugador2, puntaje2, setPuntaje2, alTerminar2, rondaActua
     }, []);
 
     return (
-        <div>
-            <h1>{nombreJugador2} what is this animal?</h1>
+        <div style={{ textAlign: 'center', backgroundImage: `url(/img/JuegoAnimales/FondoAnimales.png)`, height: '100vh', backgroundSize: 'cover', paddingTop: '35vh' }}>
+            <h1>{nombreJugador2} What is this animal?</h1>
             <p>Game round: {rondaActual2}</p>
             <img src={animalObjetivo2.imagen} alt={animalObjetivo2.nombre} />
             <div>
@@ -88,11 +88,15 @@ function Juego2({ nombreJugador2, puntaje2, setPuntaje2, alTerminar2, rondaActua
                         key={animal2.nombre}
                         onClick={() => verificarRespuesta2(animal2)}
                         disabled={!puedeHacerClic2 || opcionesDeshabilitadas2}
+                        style={{ margin: '10px' }}
                     >
                         {animal2.nombre}
                     </button>
                 ))}
-                <button onClick={usarComodin2Handler} disabled={!usarComodin2 || opcionesDeshabilitadas2}>
+                <button onClick={usarComodin2Handler}
+                    disabled={!usarComodin2 || opcionesDeshabilitadas2}
+                    style={{ margin: '10px' }}
+                >
                     Use Wildcard
                 </button>
             </div>

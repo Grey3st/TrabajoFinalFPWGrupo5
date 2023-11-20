@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import dataAnimal from '../../data/dataAnimal.json';
+import { Container } from 'react-bootstrap';
 //import styles from "./inicio.module.css";
 
 function Juego({ nombreJugador, puntaje, setPuntaje, alTerminar, rondaActual, setRondaActual }) {
@@ -78,8 +79,8 @@ function Juego({ nombreJugador, puntaje, setPuntaje, alTerminar, rondaActual, se
 
 
     return (
-        <div>
-            <h1>{nombreJugador} what is this animal?</h1>
+        <div style={{ textAlign: 'center', backgroundImage: `url(/img/JuegoAnimales/FondoAnimales.png)`, height: '100vh', backgroundSize: 'cover', paddingTop: '35vh' }}>
+            <h1>{nombreJugador} What is this animal?</h1>
             <p>Game round: {rondaActual}</p>
             <img src={animalObjetivo.imagen} alt={animalObjetivo.nombre} />
             <div>
@@ -88,11 +89,16 @@ function Juego({ nombreJugador, puntaje, setPuntaje, alTerminar, rondaActual, se
                         key={animal.nombre}
                         onClick={() => verificarRespuesta(animal)}
                         disabled={!puedeHacerClic || opcionesDeshabilitadas}
+                        style={{ margin: '10px' }}
                     >
                         {animal.nombre}
                     </button>
                 ))}
-                <button onClick={usarComodinHandler} disabled={!usarComodin || opcionesDeshabilitadas}>
+                <button
+                    onClick={usarComodinHandler}
+                    disabled={!usarComodin || opcionesDeshabilitadas}
+                    style={{ margin: '10px' }}
+                >
                     Use Wildcard
                 </button>
             </div>
@@ -101,6 +107,9 @@ function Juego({ nombreJugador, puntaje, setPuntaje, alTerminar, rondaActual, se
             <button onClick={siguienteRonda}>Next</button>
         </div>
     );
+
+
+
 }
 
 export default Juego;
