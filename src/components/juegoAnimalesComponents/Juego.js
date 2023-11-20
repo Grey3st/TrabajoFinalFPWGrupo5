@@ -46,7 +46,7 @@ function Juego({ nombreJugador, puntaje, setPuntaje, alTerminar, rondaActual, se
 
         setOpciones(opcionesAleatorias);
         setAnimalObjetivo(animalCorrecto);
-    
+
     };
 
     const verificarRespuesta = (animalSeleccionado) => {
