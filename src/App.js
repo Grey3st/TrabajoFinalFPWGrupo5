@@ -6,7 +6,8 @@ import JuegoDude from './components/JuegoDude';
 import JuegoNave from './components/JuegoNave';
 import InicioJuego from './components/phaserComponents/JuegoDude/InicioJuego';
 import InicioJuegoNave from './components/phaserComponents/JuegoNave/InicioJuegoNave';
-import ListaTareas from './components/ListaTareas';
+import ListaTareas from './components/InicioListaTareas';
+
 import ComparadorPrecios from './components/ComparadorPrecios';
 import JuegoAnimales from './components/JuegoAnimales';
 
